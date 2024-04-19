@@ -47,6 +47,9 @@ set(BINAPI_SOURCES
     src/websocket.cpp
 )
 
+add_library(binapi_lib ${BINAPI_SOURCES})
+target_include_directories(binapi_lib PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include)
+
 add_executable(
     ${PROJECT_NAME}
     #
