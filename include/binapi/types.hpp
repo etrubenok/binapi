@@ -747,8 +747,8 @@ struct part_depths_t {
 // https://github.com/binance-exchange/binance-official-api-docs/blob/master/web-socket-streams.md#diff-depth-stream
 struct diff_depths_t {
     struct depth_t {
-        double_type price;
-        double_type amount;
+        double price;
+        double amount;
 
         friend std::ostream &operator<<(std::ostream &os, const depth_t &o);
     };

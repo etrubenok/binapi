@@ -1755,8 +1755,8 @@ diff_depths_t diff_depths_t::construct(const flatjson::fjson &json) {
     for ( auto idx = 0u; idx < a.size(); ++idx ) {
         diff_depths_t::depth_t item{};
         const auto it = a.at(idx);
-        item.price.assign(it.at(0).to_string());
-        item.amount.assign(it.at(1).to_string());
+        item.price = std::stod(it.at(0).to_string());
+        item.amount = std::stod(it.at(1).to_string());
 
         res.a.push_back(std::move(item));
     }
@@ -1764,8 +1764,8 @@ diff_depths_t diff_depths_t::construct(const flatjson::fjson &json) {
     for ( auto idx = 0u; idx < b.size(); ++idx ) {
         diff_depths_t::depth_t item{};
         const auto it = b.at(idx);
-        item.price.assign(it.at(0).to_string());
-        item.amount.assign(it.at(1).to_string());
+        item.price = std::stod(it.at(0).to_string());
+        item.amount = std::stod(it.at(1).to_string());
 
         res.b.push_back(std::move(item));
     }
